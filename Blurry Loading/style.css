@@ -1,0 +1,30 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;;
+}
+
+img{
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-position: center;
+    object-fit: cover;
+}
+
+body {
+    margin: 0;
+}
+
+.blur-load {
+    background-size: cover;
+    background-position: center;
+}
+
+.blur-load.loaded > img{
+    opacity: 1;
+}
+
+.blur-load > img {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
