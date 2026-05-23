@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Scroll</title>
+    <link rel="stylesheet" href="style.css">
+    <script 
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+    </script>
+    <script nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Scroll para ver animaciones</h1>
+        </div>
+        <div class="sticky-cards">
+            <div class="card card-front">
+                <h3>Primer frame</h3>
+                <p>Waos 1</p>
+                <div class="icon"><ion-icon name="caret-down"></ion-icon></div>
+            </div>
+            <div class="card card-back" id="card-1">
+                <h3>waos 1</h3>
+                <div class="icon"><ion-icon name="cube"></ion-icon></div>
+                <p>texto de waos 1</p>
+            </div>
+            <div class="card card-back" id="card-2">
+                <h3>waos 2</h3>
+                <div class="icon"><ion-icon name="layers"></ion-icon></div>
+                <p>texto de waos 2</p>
+            </div>
+            <div class="card card-back" id="card-3">
+                <h3>waos 3</h3>
+                <div class="icon"><ion-icon name="prism"></ion-icon></div>
+                <p>texto de waos 3</p>
+            </div>
+            <div class="card card-back" id="card-4">
+                <h3>waos 4</h3>
+                <div class="icon"><ion-icon name="infinite"></ion-icon></div>
+                <p>texto de waos 4</p>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <h3>Una progresion de waos</h3>
+    </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
