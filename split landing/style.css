@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --left-color: #ff6f61;
+    --right-color: #4a90e2;
+    --left-btn-hover-color: #ff3b2e;
+    --right-btn-hover-color: #357ab8;
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.top-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.top-banner h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.split.left .btn:hover {
+    background: linear-gradient(
+        135deg,
+        #ff6f61,
+        #ff3b2e
+    );
+    border-color: #ff3b2e;
+}
+
+.split.right .btn:hover {
+    background: linear-gradient(
+        135deg,
+        #4a90e2,
+        #357ab8
+    );
+    border-color: #357ab8;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    background: url('./img/2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 90% center;
+}
+
+.split.left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-color);
+    opacity: 0.4;
+}
+
+.split.right {
+    right: 0;
+    background: url('./img/5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.split.right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-color);
+    opacity: 0.4;
+}
+
+.split.right,
+.split.left,
+.split.right::before, 
+.split.left::before {
+    transition: all var(--speed) ease-in-out;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+@media (max-width: 800px) {
+    .split {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
+}
+.container {
+    width: 100%;
+    height: calc(100% - 70px);
+    margin-top: 70px;
+    background: #333;
+}
+
+.split h1,
+.split .btn {
+    transition: all 0.4s ease;
+}
+
+.hover-left .right h1,
+.hover-left .right .btn {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.hover-right .left h1,
+.hover-right .left .btn {
+    opacity: 0;
+    transform: translateX(-500px);
+}
